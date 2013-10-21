@@ -1,7 +1,7 @@
 HStore Flags
 ------------
 
-integer/bit flags aggrevating you? try this.
+Make boolean properties in a Postgresql hstore column act like your average, everyday ActiveRecord boolean field. 
 
 Requirements
 ------------
@@ -13,7 +13,9 @@ Requirements
 Installation
 ------------
 
-TODO
+1. Add `gem activerecord_hstore_boolean` to your Gemfile
+2. `bundle install`
+3. Tag fields in your model code as `hstore_boolean` as shown in Usage below.
 
 Usage
 -----
@@ -21,12 +23,12 @@ Usage
 ```ruby
 # defining flags
 class User < ActiveRecord::Base
-  hstore_flags :active, :admin
-  hstore_flags :customer, :vendor, :drop_ship, field: "user_type"
+  hstore_boolean :active, :admin
+  hstore_boolean :customer, :vendor, :drop_ship, field: "user_type"
 end
 
 class Group < ActiveRecord::Base
-  hstore_flags :active, :public, :invite_only, scopes: false
+  hstore_boolean :active, :public, :invite_only, scopes: false
 end
 
 # setting flags
