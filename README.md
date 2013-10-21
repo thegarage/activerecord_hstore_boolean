@@ -1,4 +1,4 @@
-HStore Flags
+HStore Boolean
 ------------
 
 Make boolean properties in a Postgresql hstore column act like your average, everyday ActiveRecord boolean field. 
